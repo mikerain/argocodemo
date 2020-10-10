@@ -1,0 +1,15 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: log-collection
+  labels:
+    argocd.argoproj.io/instance: log-collection
+spec:
+  host: log-collection-test-project.apps.cluster-430f.430f.example.opentlc.com
+  to:
+    kind: Service
+    name: log-collection
+    weight: 100
+  port:
+    targetPort: 8080
+  wildcardPolicy: None
