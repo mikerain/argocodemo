@@ -1,6 +1,8 @@
 #!/bin/bash
 echo "你输入了是项目：$1"
 
+echo "$#"
+
 if [ $# -eq 0 ];then
   echo "请输入项目名"
 　exit 1
