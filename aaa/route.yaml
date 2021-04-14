@@ -1,0 +1,15 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: aaa
+  labels:
+    argocd.argoproj.io/instance: aaa
+spec:
+  host: aaa-test.apps.cluster-6e99.6e99.sandbox1286.example.opentlc.com
+  to:
+    kind: Service
+    name: aaa
+    weight: 100
+  port:
+    targetPort: 8080
+  wildcardPolicy: None
