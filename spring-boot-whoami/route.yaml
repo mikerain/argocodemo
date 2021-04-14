@@ -1,0 +1,15 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: spring-boot-whoami
+  labels:
+    argocd.argoproj.io/instance: spring-boot-whoami
+spec:
+  host: spring-boot-whoami-test.apps.cluster-6e99.6e99.sandbox1286.example.opentlc.com
+  to:
+    kind: Service
+    name: spring-boot-whoami
+    weight: 100
+  port:
+    targetPort: 8080
+  wildcardPolicy: None

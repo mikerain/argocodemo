@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-boot-whoami
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: spring-boot-whoami
+  template:
+    metadata:
+      labels:
+        app: spring-boot-whoami
+    spec:
+      containers:
+      - image: quay.io/qxu/spring-boot-whoami:latest
+        name: spring-boot-whoami
+        ports:
+        - containerPort: 8080
