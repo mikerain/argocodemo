@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: XXXXX
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: XXXXX
+  template:
+    metadata:
+      labels:
+        app: XXXXX
+    spec:
+      containers:
+      - image: quay.io/qxu/XXXXX:latest
+        name: XXXXX
+        ports:
+        - containerPort: 8080
