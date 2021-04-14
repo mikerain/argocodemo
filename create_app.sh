@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/sh
+
 echo "你输入了是项目：$1"
 
 echo "$#"
