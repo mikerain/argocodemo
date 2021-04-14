@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "你输入了是项目：$1"
 
-if [ $# != 1 ];then
+if [ -z "$1" ];then
   echo "请输入项目名"
 　exit 1
 fi
