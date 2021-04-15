@@ -26,6 +26,11 @@ spec:
       containers:
       - image: quay.io/qxu/log-collection:main
         name: log-collection
+        env:
+        - name: JAVA_OPTIONS
+          value: >-
+            -XX:+UnlockExperimentalVMOptions
+            -XX:+UseCGroupMemoryLimitForHeap
         ports:
         - containerPort: 8080
         volumeMounts:
