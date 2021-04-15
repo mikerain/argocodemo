@@ -24,7 +24,7 @@ spec:
               path: mysql.properties
 
       containers:
-      - image: quay.io/qxu/log-collection:main
+      - image: quay.io/qxu/log-collection:stand
         name: log-collection
         env:
         - name: JAVA_OPTIONS
