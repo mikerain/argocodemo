@@ -5,7 +5,7 @@ metadata:
   labels:
     argocd.argoproj.io/instance: XXXXX
 spec:
-  host: XXXXX-test.apps.cluster-6e99.6e99.sandbox1286.example.opentlc.com
+  host: XXXXX-test.apps.cluster-6e99.6e99.sandbox1286.opentlc.com
   to:
     kind: Service
     name: XXXXX

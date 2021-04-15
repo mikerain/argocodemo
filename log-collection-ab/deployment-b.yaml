@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: log-collection-b
+spec:
+  replicas: 2
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: log-collectioan-b
+  template:
+    metadata:
+      labels:
+        app: log-collection-b
+    spec:
+      containers:
+      - image: quay.io/qxu/log-collection:latest
+        name: log-collection
+        ports:
+        - containerPort: 8080

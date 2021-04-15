@@ -1,0 +1,19 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: log-collection
+  labels:
+    argocd.argoproj.io/instance: log-collection
+spec:
+  host: log-collection-ab-test.apps.cluster-6e99.6e99.sandbox1286.opentlc.com
+  to:
+    kind: Service
+    name: log-collection-a
+    weight: 100
+  alternateBackends:
+    kind: Service
+    name: log-collection-b
+    weight: 50
+  port:
+    targetPort: 8080
+  wildcardPolicy: None
