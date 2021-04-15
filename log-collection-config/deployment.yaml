@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: log-collection
+spec:
+  replicas: 2
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: log-collection
+  template:
+    metadata:
+      labels:
+        app: log-collection
+    spec:
+      volumes:
+        - name: app-config-volume
+          configMap:
+            name: app-config
+            items:
+            - key: application.properties
+              path: application.properties 
+            - key: mysql.properties
+              path: mysql.properties
+
+      containers:
+      - image: quay.io/qxu/log-collection:main
+        name: log-collection
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: app-config-volume
+          mountPath: /opt/application.properties
+          subPath: application.properties
+        - name: app-config-volume
+          mountPath: /opt/mysql.properties 
+          subPath: mysql.properties
+

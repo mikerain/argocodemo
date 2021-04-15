@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  application.properties: |
+    env=local
+    msg=this is local env properteis.
+  mysql.properties: |
+    mysql.hostname=10.10.10.10
+    mysql.port=3333 
+
