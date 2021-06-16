@@ -9,7 +9,7 @@ spec:
   to:
     kind: Service
     name: log-collection-a
-    weight: 100
+    weight: 30
   alternateBackends:
   - kind: Service
     name: log-collection-b
