@@ -4,7 +4,6 @@ metadata:
   name: log-collection
 spec:
   #replicas: 2
-  #revisionHistoryLimit: 10
   selector:
     matchLabels:
       app: log-collection
