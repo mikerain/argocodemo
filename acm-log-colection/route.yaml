@@ -1,0 +1,12 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: log-collection
+  labels:
+    argocd.argoproj.io/instance: log-collection
+spec:
+  to:
+    kind: Service
+    name: log-collection
+  port:
+    targetPort: 8080
