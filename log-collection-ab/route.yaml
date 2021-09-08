@@ -5,7 +5,6 @@ metadata:
   labels:
     argocd.argoproj.io/instance: log-collection
 spec:
-  host: log-collection-ab-test.apps.cluster-dd3c.dd3c.sandbox1351.opentlc.com
   to:
     kind: Service
     name: log-collection-a
