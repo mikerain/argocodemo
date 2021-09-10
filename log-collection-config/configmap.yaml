@@ -8,5 +8,5 @@ data:
     msg=this is local env properteis.
   mysql.properties: |
     mysql.hostname=10.10.10.10
-    mysql.port=3333 
+    mysql.port=444 
 
