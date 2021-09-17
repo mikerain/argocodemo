@@ -13,7 +13,7 @@ spec:
         app: log-collection
     spec:
       containers:
-      - image: quay.io/qxu/log-collection:98
+      - image: quay.io/qxu/log-collection:main
         name: log-collection
         ports:
         - containerPort: 8080
